@@ -1,0 +1,70 @@
+{
+    "configInfo": {
+        "configVersion": 1
+    },
+    "jobTab": {
+        "steppers": [
+            {
+                "title": "SIGN-OFF",
+                "subSteppers": [
+                    {
+                        "title": "Take 5",
+                        "featureKey": "take-five",
+                        "subTitle": "Take 5",
+                        "actionList": [
+                            {
+                                "title": "Take 5",
+                                "responseType": "take-five-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Site Info",
+                        "featureKey": "site-info",
+                        "subTitle": "Site Information",
+                        "actionList": [
+                            {
+                                "title": "Site Information",
+                                "responseType": "site-info-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Crew Info",
+                        "featureKey": "crew-info",
+                        "subTitle": "Crew Information",
+                        "actionList": [
+                            {
+                                "title": "Crew Information",
+                                "responseType": "crew-info-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Site Visitor and Crew Records",
+                        "featureKey": "site-crew",
+                        "subTitle": "Site Visitor and Crew Records",
+                        "actionList": [
+                            {
+                                "title": "Site Visitor and Crew Records",
+                                "responseType": "site-visitor-crew-records-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Leaving Site",
+                        "featureKey": "leaving-site",
+                        "subTitle": "Leaving Site",
+                        "actionList": [
+                            {
+                                "title": "Leaving Site",
+                                "responseType": "leaving-site-panel"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "dataLists": []
+} 
