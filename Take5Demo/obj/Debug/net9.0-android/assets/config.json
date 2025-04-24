@@ -1,0 +1,288 @@
+{
+    "configInfo": {
+        "configVersion": 1
+    },
+    "jobTab": {
+        "steppers": [
+            {
+                "title": "SIGN-OFF",
+                "subSteppers": [
+                    {
+                        "title": "Take 5",
+                        "featureKey": "take-five",
+                        "subTitle": "Take 5",
+                        "actionList": [
+                            {
+                                "title": "Take 5",
+                                "responseType": "take-five-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Site Info",
+                        "featureKey": "site-info",
+                        "subTitle": "Site Information",
+                        "actionList": [
+                            {
+                                "title": "Site Information",
+                                "responseType": "site-info-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Crew Info",
+                        "featureKey": "crew-info",
+                        "subTitle": "Crew Information",
+                        "actionList": [
+                            {
+                                "title": "Crew Information",
+                                "responseType": "crew-info-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Site Visitor and Crew Records",
+                        "featureKey": "site-crew",
+                        "subTitle": "Site Visitor and Crew Records",
+                        "actionList": [
+                            {
+                                "title": "Site Visitor and Crew Records",
+                                "responseType": "site-visitor-crew-records-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Leaving Site",
+                        "featureKey": "leaving-site",
+                        "subTitle": "Leaving Site",
+                        "actionList": [
+                            {
+                                "title": "Leaving Site",
+                                "responseType": "leaving-site-panel"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "dataLists": [
+        {
+            "featureKey": "take-five",
+            "questionSet": {
+                "name": "Precursor/Take 5 questions",
+                "description": "",
+                "questionGroups": [
+                    {
+                        "name": "precursors questions",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Is there are permit required?",
+                                "description": "",
+                                "responseType": "Radio",
+                                "isMandatory": 0,
+                                "value": [ "Yes", "No" ],
+                                "logic": ""
+                            },
+
+                            {
+                                "name": "Is there an environmental risk onsite?",
+                                "description": "",
+                                "responseType": "Radio",
+                                "isMandatory": 1,
+                                "value": [ "Yes", "No" ],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Is there a site risk with the task i.e. Working at Height <2m?",
+                                "description": "",
+                                "responseType": "Radio",
+                                "isMandatory": 1,
+                                "value": [ "Yes", "No" ],
+                                "logic": ""
+                            }
+
+                        ]
+                    },
+
+                    {
+                        "name": "Take 5 questions",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Assess the site risks for people/animals/environment?",
+                                "description": "",
+                                "responseType": "List",
+                                "isMandatory": 1,
+                                "value": [ "High", "Medium", "Low" ]
+                            },
+                            {
+                                "name": "Is there an SOP for the task?",
+                                "description": "",
+                                "responseType": "Radio",
+                                "isMandatory": 1,
+                                "value": [ "Yes", "No" ],
+                                "logic": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "featureKey": "site-info",
+            "questionSet": {
+                "name": "Site Information",
+                "description": "",
+                "questionGroups": [
+                    {
+                        "name": "Site Details",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Evacuation Point",
+                                "description": "Specify the evacuation point",
+                                "responseType": "Text",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Location",
+                                "description": "Select the site location",
+                                "responseType": "Picker",
+                                "isMandatory": 1,
+                                "value": [ "North Site", "South Site", "East Site", "West Site", "Central Site" ],
+                                "logic": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Nearest Medical Facility Information",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Facility Name",
+                                "description": "Enter facility name",
+                                "responseType": "Text",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Site Information Signature",
+                                "description": "Please sign to confirm site information",
+                                "responseType": "Signature",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "featureKey": "crew-info",
+            "questionSet": {
+                "name": "Crew Information",
+                "description": "",
+                "questionGroups": [
+                    {
+                        "name": "Crew Details",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Field Manager",
+                                "description": "Select field manager",
+                                "responseType": "Picker",
+                                "isMandatory": 1,
+                                "value": [ "John Smith", "Sarah Johnson", "Michael Brown", "Emily Davis", "Robert Wilson" ],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Work Type",
+                                "description": "Select work type",
+                                "responseType": "Picker",
+                                "isMandatory": 1,
+                                "value": [ "Maintenance", "Installation", "Inspection", "Repair", "Construction", "Safety Audit" ],
+                                "logic": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "featureKey": "site-crew",
+            "questionSet": {
+                "name": "Site Visitor and Crew Records",
+                "description": "",
+                "questionGroups": [
+                    {
+                        "name": "Visitor Details",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Visitor Name",
+                                "description": "Enter visitor name",
+                                "responseType": "Text",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Visitor Company",
+                                "description": "Enter visitor company name",
+                                "responseType": "Text",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Reason for Visit",
+                                "description": "Select reason for visit",
+                                "responseType": "Picker",
+                                "isMandatory": 1,
+                                "value": [ "Hot work Monitoring", "Maintenance", "Inspection", "Training", "Consultation" ],
+                                "logic": ""
+                            },
+                            {
+                                "name": "Site Visitor Signature",
+                                "description": "Please sign to confirm site information",
+                                "responseType": "Signature",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "featureKey": "leaving-site",
+            "questionSet": {
+                "name": "Leaving Site",
+                "description": "",
+                "questionGroups": [
+                    {
+                        "name": "Site Departure",
+                        "description": "",
+                        "questions": [
+                            {
+                                "name": "Leaving Site Signature",
+                                "description": "Please sign to confirm site information",
+                                "responseType": "Signature",
+                                "isMandatory": 1,
+                                "value": [],
+                                "logic": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

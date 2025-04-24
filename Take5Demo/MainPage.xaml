@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            xmlns:local="clr-namespace:Take5Demo.ViewModel"  
+            xmlns:root="clr-namespace:Take5Demo"
+            xmlns:svgFFImageLoading="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+            xmlns:control="clr-namespace:Take5Demo.Control"  
+            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"  
+            xmlns:selector="clr-namespace:Take5Demo.Selector"
+            x:Class="Take5Demo.MainPage">
+
+    <ContentPage.Resources>
+        <!-- Step Progress Template -->
+        <DataTemplate x:Key="StepProgressTemplate">
+            <StackLayout>
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="40, 30">
+                    <RadioButton Grid.Row="0" Grid.Column="0" 
+                                 GroupName="steppers"
+                                 IsChecked="{Binding IsSelected}"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Start"
+                                 Margin="-6, -12, 0, 0">
+                        <RadioButton.GestureRecognizers>
+                            <TapGestureRecognizer
+                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                            Path=BindingContext.StepSelectedCommand}"
+                                 CommandParameter="{Binding .}" />
+                        </RadioButton.GestureRecognizers>
+                    </RadioButton>
+
+                    <BoxView Grid.Row="0" Grid.Column="1" 
+                             HeightRequest="1" 
+                             BackgroundColor="Black"
+                             Margin="-20,0,0,15"
+                             IsVisible="{Binding HasNextStep}" />
+
+                    <RadioButton Content="{Binding .}" 
+                                 Padding="0, 0, 0, 8"
+                                 HorizontalOptions="Center"
+                                 IsChecked="{Binding IsSelected}"
+                                 Grid.Row="1" 
+                                 Grid.Column="0"
+                                 Margin="30, -10, 0, 0">
+                        <RadioButton.ControlTemplate>
+                            <ControlTemplate>
+                                <Label Text="{TemplateBinding Content.Title}" 
+                                       IsVisible="{TemplateBinding IsChecked}"
+                                       FontSize="10"
+                                       WidthRequest="70" />
+                            </ControlTemplate>
+                        </RadioButton.ControlTemplate>
+                    </RadioButton>
+                </Grid>
+            </StackLayout>
+        </DataTemplate>
+        <!--VisitorManagementTemplate-->
+        <DataTemplate x:Key="VisitorManagementTemplate">
+            <StackLayout BindableLayout.ItemsSource="{Binding QuestionGroups}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <toolkit:Expander IsExpanded="True">
+                                <toolkit:Expander.Header>
+                                    <Grid Padding="5, 15" ColumnDefinitions="*, Auto">
+                                        <Label Grid.Column="0"
+                                               Text="{Binding Name}" 
+                                               FontAttributes="Bold"
+                                               FontSize="14" 
+                                               VerticalOptions="Center"/>
+                                        <Image Grid.Column="1" 
+                                               VerticalOptions="Center" 
+                                               HeightRequest="15"
+                                               Source="down_arrow.png">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image"
+                                                             Binding="{Binding Source={RelativeSource AncestorType={x:Type toolkit:Expander}}, 
+                                                                               Path=IsExpanded}"
+                                                             Value="True">
+                                                    <Setter Property="Rotation" Value="180" />
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                    </Grid>
+                                </toolkit:Expander.Header>
+                                
+                                <StackLayout Margin="10">
+                                    <StackLayout HorizontalOptions="FillAndExpand"
+                                                 VerticalOptions="FillAndExpand"
+                                                 BindableLayout.ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                                                                      Path=BindingContext.Visitors}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BackgroundColor="LightGray" 
+                                                       Padding="15" 
+                                                       Margin="0,5,0,10" 
+                                                       CornerRadius="5">
+                                                    <StackLayout BindingContextChanged="BindingContextChangedAction">
+                                                        <Grid ColumnDefinitions="*, Auto">
+                                                            <Label Grid.Column="0"
+                                                                   Text="{Binding VisitorName, StringFormat='Visitor: {0}'}" 
+                                                                   TextColor="#374151"
+                                                                   FontAttributes="Bold"
+                                                                   FontSize="16"/>
+                                                            <Button Text="Remove" 
+                                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                                                               Path=BindingContext.RemoveVisitorCommand}"
+                                                                    CommandParameter="{Binding .}"
+                                                                    BackgroundColor="#D1D5DB" 
+                                                                    TextColor="#374151"
+                                                                    CornerRadius="6"
+                                                                    Padding="3, 0"
+                                                                    FontSize="11"
+                                                                    BorderWidth="0.5"
+                                                                    BorderColor="Black"
+                                                                    Grid.Column="1"
+                                                                    HorizontalOptions="End"/>
+                                                        </Grid>
+
+                                                        <StackLayout BindableLayout.ItemsSource="{Binding Questions}" >
+                                                            <BindableLayout.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <root:TemplatedContentView 
+                                                                        Item="{Binding .}"
+                                                                        ItemTemplateSelector="{StaticResource QuestionTemplateSelector}" />
+                                                                </DataTemplate>
+                                                            </BindableLayout.ItemTemplate>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+
+                                    <StackLayout Padding="0,5,0,5"
+                                                 HorizontalOptions="FillAndExpand"
+                                                 VerticalOptions="Center"
+                                                 Orientation="Horizontal">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                                  Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}},
+                                                                            Path=BindingContext.AddVisitorCommand}" />
+                                        </StackLayout.GestureRecognizers>
+                                        <Frame BackgroundColor="#10B981" 
+                                               CornerRadius="25" 
+                                               HeightRequest="40" 
+                                               WidthRequest="40" 
+                                               Padding="0" 
+                                               HorizontalOptions="Start" 
+                                               VerticalOptions="Center">
+                                            <Label Text="+" 
+                                                   TextColor="White" 
+                                                   FontSize="24" 
+                                                   FontAttributes="Bold" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Frame>
+                                        <Label Padding="10,0,0,0"
+                                               Text="Add a Visitor"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="CenterAndExpand"
+                                               VerticalTextAlignment="Center"
+                                               FontSize="16"
+                                               TextColor="#10B981" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </toolkit:Expander>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </DataTemplate>
+        <!-- DefaultStepTemplate-->
+        <DataTemplate x:Key="DefaultStepTemplate">
+            <StackLayout BindableLayout.ItemsSource="{Binding QuestionGroups}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <toolkit:Expander BackgroundColor="White" IsExpanded="False">
+                                <toolkit:Expander.Header>
+                                    <Grid Padding="10" ColumnDefinitions="*, Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="{Binding Name}" 
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               VerticalOptions="Center"/>
+                                        <Image Grid.Column="1" 
+                                               VerticalOptions="Center" 
+                                               HeightRequest="15"
+                                               Source="down_arrow.png">
+                                            <Image.Triggers>
+                                                <DataTrigger TargetType="Image"
+                                                             Binding="{Binding Source={RelativeSource AncestorType={x:Type toolkit:Expander}}, 
+                                                                               Path=IsExpanded}"
+                                                             Value="True">
+                                                    <Setter Property="Rotation" Value="180" />
+                                                </DataTrigger>
+                                            </Image.Triggers>
+                                        </Image>
+                                    </Grid>
+                                </toolkit:Expander.Header>
+
+                                <StackLayout Margin="10" BindableLayout.ItemsSource="{Binding Questions}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <root:TemplatedContentView 
+                                                Item="{Binding .}"
+                                                ItemTemplateSelector="{StaticResource QuestionTemplateSelector}" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </toolkit:Expander>
+                            <BoxView HeightRequest="0.5"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </DataTemplate>
+
+        <selector:StepTemplateSelector x:Key="StepTemplateSelector" 
+                                       VisitorManagementTemplate="{StaticResource VisitorManagementTemplate}"
+                                       DefaultTemplate="{StaticResource DefaultStepTemplate}"/>
+
+        <!-- Question Template-->
+        <DataTemplate x:Key="RadioQuestionTemplate">
+            <Frame BackgroundColor="White" 
+                   BorderColor="#EBEBEB"
+                   CornerRadius="5"
+                   Padding="20"
+                   Margin="0,0,0,10">
+                <StackLayout Spacing="10">
+                    <Grid ColumnSpacing="10" ColumnDefinitions="Auto, *">
+                        <HorizontalStackLayout>
+                            <Frame Grid.Column="0"
+                                   BackgroundColor="#4B6CB7"
+                                   CornerRadius="30"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   Padding="0"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start">
+                                <Label Text="i"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontSize="14"/>
+                            </Frame>
+                            <Label HorizontalOptions="Start" 
+                                   IsVisible="{Binding IsMandatory}" 
+                                   Text="*" 
+                                   TextColor="Red" 
+                                   VerticalTextAlignment="Start" />
+                        </HorizontalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="{Binding Name}"
+                               FontSize="14"
+                               TextColor="#505050"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <StackLayout>
+                        <Label Text="Choose Options:" 
+                               Margin="40,0,0,0"
+                               TextColor="#505050"/>
+                        <HorizontalStackLayout Margin="40,0,0,0" 
+                                               Spacing="15"
+                                               BindableLayout.ItemsSource="{Binding Value}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <RadioButton Content="{Binding .}" 
+                                                 GroupName="{Binding Source={RelativeSource AncestorType={x:Type Frame}}, 
+                                                            Path=BindingContext.Name}"
+                                                 TextColor="#505050"
+                                                 CheckedChanged="OnQuestionRadioButtonCheckedChanged" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </DataTemplate>
+        <DataTemplate x:Key="ListQuestionTemplate">
+            <Frame BackgroundColor="White" 
+                   BorderColor="#EBEBEB"
+                   CornerRadius="5"
+                   Padding="20"
+                   Margin="0,0,0,10">
+                <StackLayout Spacing="10">
+                    <Grid ColumnSpacing="10" ColumnDefinitions="Auto, *">
+                        <HorizontalStackLayout>
+                            <Frame Grid.Column="0"
+                                   BackgroundColor="#4B6CB7"
+                                   CornerRadius="30"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   Padding="0"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start">
+                                <Label Text="i"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontSize="14"/>
+                            </Frame>
+                            <Label HorizontalOptions="Start" 
+                                   IsVisible="{Binding IsMandatory}" 
+                                   Text="*" 
+                                   TextColor="Red" 
+                                   VerticalTextAlignment="Start" />
+                        </HorizontalStackLayout>
+                        <Label Grid.Column="1"
+                               Text="{Binding Name}"
+                               FontSize="14"
+                               TextColor="#505050"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <StackLayout>
+                        <Label Text="Choose Options:" 
+                                Margin="40,5,0,5"
+                                TextColor="#505050"/>
+                                            <Border Margin="40,0,0,0"
+                                 Stroke="#CCCCCC"
+                                 StrokeThickness="1"
+                                 StrokeShape="RoundRectangle 5,5,5,5">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Picker Grid.Column="0"
+                                         HorizontalOptions="FillAndExpand"
+                                         BackgroundColor="Transparent"
+                                         ItemsSource="{Binding Value}"
+                                         SelectedIndexChanged="OnQuestionPickerSelectedIndexChanged">
+                                </Picker>
+                                <Image Grid.Column="1"
+                                        Source="down_arrow.png" 
+                                        HeightRequest="15"
+                                        WidthRequest="15"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        Margin="0,0,10,0"/>
+                            </Grid>
+                        </Border>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+        </DataTemplate>
+        <DataTemplate x:Key="PickerQuestionTemplate">
+            <StackLayout Spacing="5" Margin="0, 20">
+                <HorizontalStackLayout Spacing="5">
+                    <Label HorizontalOptions="Start" IsVisible="{Binding IsMandatory}" Text="*" TextColor="Red" VerticalTextAlignment="Start" />
+                    <Label Text="{Binding Name}" 
+                           TextColor="Black" 
+                           FontAttributes="Bold"
+                           FontSize="14"/>
+                </HorizontalStackLayout>
+                <Grid ColumnDefinitions="*, Auto">
+                    <Border BackgroundColor="White"
+                            Stroke="#CCCCCC"
+                            StrokeThickness="1"
+                            StrokeShape="Rectangle"
+                            Grid.ColumnSpan="2">
+                        <Picker BackgroundColor="Transparent"
+                                Title="{Binding Description}"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                ItemsSource="{Binding Value}"
+                                SelectedIndexChanged="OnQuestionPickerSelectedIndexChanged">
+                        </Picker>
+                    </Border>
+                    <Image Grid.Column="1" 
+                           Source="down_arrow.png"
+                           WidthRequest="15"
+                           HeightRequest="15"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           Margin="0,0,10,0"/>
+                </Grid>
+            </StackLayout>
+        </DataTemplate>
+        <DataTemplate x:Key="EntryQuestionTemplate">
+            <StackLayout Spacing="5" Margin="0, 10">
+                <HorizontalStackLayout Spacing="5">
+                    <Label HorizontalOptions="Start" IsVisible="{Binding IsMandatory}" Text="*" TextColor="Red" VerticalTextAlignment="Start" />
+                    <Label Text="{Binding Name}" 
+                       FontAttributes="Bold"
+                       FontSize="16"/>
+                </HorizontalStackLayout>
+                <Border BackgroundColor="White">
+                    <Entry Placeholder="{Binding Description}" 
+                           FontAttributes="Bold"
+                           HeightRequest="40"
+                           TextChanged="OnQuestionEntryTextChanged"/>
+                </Border>
+            </StackLayout>
+        </DataTemplate>
+        <DataTemplate x:Key="SignatureQuestionTemplate">
+            <StackLayout>
+                <Label Text="Declaration" 
+                       TextColor="#374151" 
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       Margin="0,15,0,5"/>
+                <Label Text="{Binding Description}" 
+                       TextColor="#6B7280" 
+                       FontSize="14"
+                       Margin="0,0,0,10"/>
+                <StackLayout Spacing="5">
+                    <HorizontalStackLayout Spacing="5">
+                        <Label HorizontalOptions="Start" IsVisible="{Binding IsMandatory}" Text="*" TextColor="Red" VerticalTextAlignment="Start" />
+                        <Label Text="{Binding Name}" 
+                           TextColor="#6B7280" 
+                           FontSize="14"/>
+                    </HorizontalStackLayout>
+                    <Image x:Name="imgSignature" 
+                           IsVisible="{Binding HasSignature}"
+                           Source="{Binding SignatureImageSource}" 
+                           HeightRequest="100" 
+                           BackgroundColor="White"
+                           VerticalOptions="Center"
+                           HorizontalOptions="FillAndExpand"
+                           Margin="0,5,0,5" />
+                    <Border BackgroundColor="White"
+                            Stroke="#CCCCCC"
+                            StrokeThickness="1"
+                            StrokeShape="Rectangle"
+                            HeightRequest="100"
+                            x:Name="borderContainSignature">
+                        <control:CustomSignaturePadView 
+                                x:Name="signatureView"
+                                DrawingLineCompleted="DrawingView_DrawingLineCompleted"
+                                HeightRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                IsMultiLineModeEnabled="True"
+                                LineWidth="5"
+                                VerticalOptions="FillAndExpand" />
+                    </Border>
+                    <Grid Margin="0,10,0,0"
+                          ColumnDefinitions="*, *"
+                          ColumnSpacing="10">
+                       <Button Grid.Column="0" 
+                                Text="Clear" 
+                                BackgroundColor="#E5E7EB" 
+                                TextColor="#374151" 
+                                CornerRadius="6"
+                                HeightRequest="45"
+                                IsVisible="{Binding HasSignature}"
+                                Clicked="SignatureView_Cleared"/>
+
+                        <Button Grid.Column="1" 
+                                Text="Save Signature" 
+                                BackgroundColor="#0EA5E9" 
+                                TextColor="White" 
+                                CornerRadius="6" 
+                                HeightRequest="45"
+                                IsVisible="{Binding HasSignature, Converter={StaticResource InverseBoolConverter}}"
+                                Clicked="SignatureView_StrokeCompleted"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </DataTemplate>
+
+        <selector:QuestionTemplateSelector x:Key="QuestionTemplateSelector"
+                                           RadioTemplate="{StaticResource RadioQuestionTemplate}"
+                                           ListTemplate="{StaticResource ListQuestionTemplate}" 
+                                           TextTemplate="{StaticResource EntryQuestionTemplate}"
+                                           PickerTemplate="{StaticResource PickerQuestionTemplate}"
+                                           SignatureTemplate="{StaticResource SignatureQuestionTemplate}"/>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *">
+        <toolkit:Expander Grid.Row="0"
+                          IsExpanded="{Binding IsStepperExpanded, Mode=TwoWay}"
+                          BackgroundColor="White"
+                          x:Name="ProgressHeader">
+            <toolkit:Expander.Header>
+                <VerticalStackLayout>
+                    <BoxView HeightRequest="0.5" Margin="0,0,0,5"/>
+                    <Grid HorizontalOptions="Center" 
+                          MaximumHeightRequest="60" 
+                          Padding="5" 
+                          ColumnDefinitions="Auto, *, Auto">
+                        <Label Grid.Column="0" 
+                               Padding="10, 0, 10, 0" 
+                               VerticalOptions="Start">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CurrentStepNumber}"/>
+                                    <Span Text="/"/>
+                                    <Span Text="{Binding TotalSteps}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <CollectionView Grid.Column="1"
+                                        ItemsSource="{Binding Steps}"
+                                        ItemTemplate="{StaticResource StepProgressTemplate}"
+                                        VerticalOptions="Start"
+                                        SelectionMode="None"
+                                        MaximumWidthRequest="350">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal"/>
+                            </CollectionView.ItemsLayout>
+                        </CollectionView>
+
+                        <Image Grid.Column="2" 
+                               VerticalOptions="Start" 
+                               HeightRequest="15"
+                               Source="down_arrow.png"
+                               Margin="0, 3, 5, 0">
+                            <Image.Triggers>
+                                <DataTrigger TargetType="Image"
+                                             Binding="{Binding Source={x:Reference ProgressHeader}, 
+                                                       Path=IsExpanded}"
+                                             Value="True">
+                                    <Setter Property="Rotation" Value="180" />
+                                </DataTrigger>
+                            </Image.Triggers>
+                        </Image>
+                    </Grid>
+                    <BoxView HeightRequest="0.5" />
+                </VerticalStackLayout>
+            </toolkit:Expander.Header>
+            <StackLayout BackgroundColor="White">
+                <CollectionView ItemsSource="{Binding Steps}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="3" 
+                                   BackgroundColor="{Binding IsSelected, 
+                                                     Converter={StaticResource BoolToBackgroundConverter}}"
+                                   HasShadow="False" 
+                                   BorderColor="Transparent"
+                                   CornerRadius="0">
+                                <Label Text="{Binding Title}" 
+                                       TextColor="{Binding IsSelected, 
+                                                   Converter={StaticResource BoolToTextColorConverter}}"
+                                       FontSize="15" 
+                                       HorizontalOptions="Center">
+                                </Label>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                                  Path=BindingContext.StepSelectedCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <BoxView HeightRequest="0.2" />
+            </StackLayout>
+        </toolkit:Expander>
+        <CollectionView ItemsSource="{Binding Steps}"
+                        SelectionMode="None"
+                        Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowDefinitions="Auto, *, Auto"
+                          IsVisible="{Binding IsCurrentStep}">
+                        <!-- Step Header -->
+                        <StackLayout Grid.Row="0" Spacing="5">
+                            <Label Text="{Binding SubTitle}" 
+                                       TextColor="Black" 
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       Margin="20, 10, 0, 0"/>
+                            <BoxView HeightRequest="0.5"/>
+                        </StackLayout>
+
+                        <!-- Question Groups -->
+                        <ScrollView Grid.Row="1">
+                            <StackLayout Margin="10">
+                                <root:TemplatedContentView 
+                                     Grid.Row="1"
+                                     Item="{Binding .}"
+                                     ItemTemplateSelector="{StaticResource StepTemplateSelector}" />
+                            </StackLayout>
+                        </ScrollView>
+
+                        <!-- Continue Button -->
+                        <Grid ColumnSpacing="15" 
+                              Padding="20"
+                              Grid.Row="2" ColumnDefinitions="Auto, *">
+                            <Button Grid.Column="0" 
+                                    Text="BACK" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                              Path=BindingContext.GoToPreviousStepCommand}" 
+                                    BackgroundColor="#E5E7EB" 
+                                    TextColor="#374151" 
+                                    CornerRadius="5" 
+                                    HeightRequest="50"
+                                    IsVisible="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                                Path=BindingContext.CanGoBack}"/>
+                            <Button Grid.Column="1" 
+                                    Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                           Path=BindingContext.ContinueButtonText}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                              Path=BindingContext.GoToNextStepCommand}" 
+                                    BackgroundColor="#A4C1E8" 
+                                    TextColor="#374151" 
+                                    CornerRadius="5" 
+                                    HeightRequest="50" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

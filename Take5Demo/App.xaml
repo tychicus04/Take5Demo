@@ -1,0 +1,28 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Take5Demo"
+             xmlns:viewmodel="clr-namespace:Take5Demo.ViewModel"
+             xmlns:converter="clr-namespace:Take5Demo.Converter"
+             x:Class="Take5Demo.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter:BoolToColorConverter x:Key="BoolToColorConverter" 
+                                            TrueColor="#007AFF" 
+                                            FalseColor="Transparent"/>
+            <converter:BoolToColorConverter x:Key="BoolToTextColorConverter" 
+                                            TrueColor="White" 
+                                            FalseColor="Black"/>
+            <converter:BoolToColorConverter x:Key="BoolToBackgroundConverter" 
+                                            TrueColor="#007AFF" />
+            <converter:StepVisibilityConverter x:Key="StepVisibilityConverter"/>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

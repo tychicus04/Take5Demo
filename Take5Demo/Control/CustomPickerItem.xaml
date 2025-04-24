@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Take5Demo.Control.CustomPickerItem">
+    <StackLayout Spacing="5">
+        <Label Text="{Binding Title}" 
+           TextColor="#6B7280" 
+           FontSize="14"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Border BackgroundColor="White"
+                Stroke="#CCCCCC"
+                StrokeThickness="1"
+                StrokeShape="Rectangle"
+                Grid.ColumnSpan="2">
+                <Picker BackgroundColor="Transparent"
+                    Title="{Binding PlaceHolderTitle}"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    ItemsSource="{Binding Items}"
+                    SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                    SelectedIndexChanged="Picker_SelectedIndexChanged">
+                </Picker>
+            </Border>
+            <Image Grid.Column="1" 
+               Source="down_arrow.png"
+               WidthRequest="15"
+               HeightRequest="15"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               Margin="0,0,10,0"/>
+        </Grid>
+    </StackLayout>
+</ContentView>

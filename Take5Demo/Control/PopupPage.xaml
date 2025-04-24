@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+          x:Class="Take5Demo.Control.PopupPage"
+          CanBeDismissedByTappingOutsideOfPopup="False"
+          Size="300, 200">
+    <Frame BackgroundColor="White"
+           BorderColor="#FFCDD2"
+           CornerRadius="10"
+           HasShadow="True"
+           Padding="20">
+        <VerticalStackLayout Spacing="20">
+            <Label Text="Warning"
+                  TextColor="#B71C1C"
+                  FontSize="18"
+                  FontAttributes="Bold"
+                  HorizontalOptions="Center"/>
+            <Label x:Name="ErrorMessageLabel"
+                  Text="Please answer all questions before proceeding."
+                  TextColor="#B71C1C"
+                  FontSize="14"
+                  HorizontalOptions="Center"
+                  HorizontalTextAlignment="Center"/>
+            <Button Text="Cancel"
+                   Clicked="Button_Clicked"
+                   BackgroundColor="#007AFF"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   CornerRadius="5"
+                   HeightRequest="40"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </Frame>
+</mct:Popup>
