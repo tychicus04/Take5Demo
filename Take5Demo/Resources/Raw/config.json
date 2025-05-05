@@ -8,17 +8,6 @@
                 "title": "SIGN-OFF",
                 "subSteppers": [
                     {
-                        "title": "Take 5",
-                        "featureKey": "take-five",
-                        "subTitle": "Take 5",
-                        "actionList": [
-                            {
-                                "title": "Take 5",
-                                "responseType": "take-five-panel"
-                            }
-                        ]
-                    },
-                    {
                         "title": "Site Info",
                         "featureKey": "site-info",
                         "subTitle": "Site Information",
@@ -26,6 +15,17 @@
                             {
                                 "title": "Site Information",
                                 "responseType": "site-info-panel"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Take 5",
+                        "featureKey": "take-five",
+                        "subTitle": "Take 5",
+                        "actionList": [
+                            {
+                                "title": "Take 5",
+                                "responseType": "take-five-panel"
                             }
                         ]
                     },
@@ -156,6 +156,7 @@
                                 "value": [ "North Site", "South Site", "East Site", "West Site", "Central Site" ],
                                 "logic": ""
                             }
+
                         ]
                     },
                     {

@@ -4,6 +4,9 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\CommunityToolkit.Maui.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\CommunityToolkit.Maui.Core.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\CommunityToolkit.Mvvm.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\ExCSS.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\FFImageLoading.Maui.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\HarfBuzzSharp.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Configuration.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Extensions.DependencyInjection.dll
@@ -19,6 +22,12 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Essentials.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Graphics.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Newtonsoft.Json.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\ShimSkiaSharp.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\SkiaSharp.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\SkiaSharp.HarfBuzz.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Svg.Custom.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Svg.Model.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Svg.Skia.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\ar\Microsoft.Maui.Controls.resources.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\ca\Microsoft.Maui.Controls.resources.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -53,6 +62,12 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\zh-HK\Microsoft.Maui.Controls.resources.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\zh-Hans\Microsoft.Maui.Controls.resources.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\zh-Hant\Microsoft.Maui.Controls.resources.dll
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\libHarfBuzzSharp.h
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Info.plist
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\module.modulemap
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\CodeResources
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\libHarfBuzzSharp
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\libSkiaSharp
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.CSharp.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualBasic.Core.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualBasic.dll
@@ -258,7 +273,6 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\bin\Debug\net9.0-ios\iossimulator-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\build-signature\signature
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.inputs
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauifont.inputs
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.inputs
@@ -268,6 +282,8 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.stamp
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\down_arrow.png
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\up_arrow.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -283,6 +299,9 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\plus_add@3x.png
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\plus_add@2x.png
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\plus_add.png
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.stamp
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.outputs
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\f\MauiInfo.plist
@@ -307,6 +326,7 @@ C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\io
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.AssemblyInfoInputs.cache
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.AssemblyInfo.cs
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.csproj.CoreCompileInputs.cache
+C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.sourcelink.json
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\XamlC.stamp
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.csproj.Up2Date
 C:\Users\tai.nguyenminh\source\repos\Take5Demo\Take5Demo\obj\Debug\net9.0-ios\iossimulator-x64\Take5Demo.dll

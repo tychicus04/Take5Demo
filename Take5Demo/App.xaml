@@ -22,6 +22,7 @@
                                             TrueColor="#007AFF" />
             <converter:StepVisibilityConverter x:Key="StepVisibilityConverter"/>
             <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:YesNoConverter x:Key="YesNoConverter"/>
 
         </ResourceDictionary>
     </Application.Resources>

@@ -7,6 +7,7 @@ using StackLayout = Microsoft.Maui.Controls.StackLayout;
 using Take5Demo.Helper;
 using CommunityToolkit.Maui.Core;
 using Grid = Microsoft.Maui.Controls.Grid;
+using System.ComponentModel;
 
 namespace Take5Demo
 {
@@ -54,7 +55,7 @@ namespace Take5Demo
             return null;
         }
 
-        private IEnumerable<Element> GetAllChildren(Element element)
+        public IEnumerable<Element> GetAllChildren(Element element)
         {
             var children = new List<Element>();
 
@@ -76,22 +77,18 @@ namespace Take5Demo
                 children.Add(frame.Content);
                 children.AddRange(GetAllChildren(frame.Content));
             }
-            else if (element is Border border && border.Content != null)
-            {
-                children.Add(border.Content);
-                children.AddRange(GetAllChildren(border.Content));
-            }
 
             return children;
         }
 
         private void OnQuestionRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            if (sender is RadioButton radioButton && radioButton.BindingContext is string option)
+            if (sender is RadioButton radioButton)
             {
                 var frame = radioButton.FindAncestorOfType<Frame>();
                 if (frame?.BindingContext is Question question)
                 {
+   
                     _viewModel.HandleRadioButtonCheckedChanged(sender, e, question);
                 }
             }
@@ -119,8 +116,8 @@ namespace Take5Demo
 
         private async void DrawingView_DrawingLineCompleted(object sender, DrawingLineCompletedEventArgs e)
         {
-            var stream = await (sender as CustomSignaturePadView).GetImageStream(625, 225);
-            var parent = (sender as CustomSignaturePadView).Parent;
+            var stream = await (sender as DrawingView).GetImageStream(625, 225);
+            var parent = (sender as DrawingView).Parent;
             var imageSignatureDisplay = parent.FindByName<Image>("imgSignature");
             imageSignatureDisplay.Source = ImageSource.FromStream(() => stream);
         }
@@ -129,7 +126,8 @@ namespace Take5Demo
         {
             var gridParent = (Grid)(sender as Button).Parent;
             var parent = (StackLayout)gridParent.Parent;
-            var signaturePadView = parent.FindByName<CustomSignaturePadView>("signatureView");
+            var imageSignatureDisplay = parent.FindByName<Image>("imgSignature");
+            var signaturePadView = parent.FindByName<DrawingView>("signatureView");
             try
             {
                 if (signaturePadView.Lines == null || !signaturePadView.Lines.Any())
@@ -153,9 +151,9 @@ namespace Take5Demo
                         _viewModel.HandleSignatureCompleted(signaturePadView, e, question, base64Str);
                     }
                     else
-            {
-                await DisplayAlert("Error", "Question information is missing.", "OK");
-            }
+                    {
+                        await DisplayAlert("Error", "Question information is missing.", "OK");
+                    }
                 }
 
             }
@@ -171,7 +169,7 @@ namespace Take5Demo
             {
                 var gridParent = (Grid)(sender as Button).Parent;
                 var parent = (StackLayout)gridParent.Parent;
-                var signaturePadView = parent.FindByName<CustomSignaturePadView>("signatureView");
+                var signaturePadView = parent.FindByName<DrawingView>("signatureView");
                 var question = signaturePadView.BindingContext as Question;
                 if (question != null)
                 {
