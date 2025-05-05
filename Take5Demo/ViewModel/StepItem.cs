@@ -22,6 +22,17 @@ namespace Take5Demo.ViewModel
         {
             QuestionGroups = new ObservableCollection<QuestionGroup>();
         }
+        public StepItem(string stepId, int stepNumber, string title, bool isSelected, bool hasNextStep, string subTitle, bool isCurrentStep)
+        {
+            _stepId = stepId;
+            _stepNumber = stepNumber;
+            _title = title;
+            _isSelected = isSelected;
+            _hasNextStep = hasNextStep;
+            _subTitle = subTitle;
+            _isCurrentStep = isCurrentStep;
+            QuestionGroups = new ObservableCollection<QuestionGroup>();
+        }
 
         #region Properties
         public event PropertyChangedEventHandler PropertyChanged;

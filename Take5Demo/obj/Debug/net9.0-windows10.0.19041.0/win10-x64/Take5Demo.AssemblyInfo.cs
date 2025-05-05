@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Take5Demo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e2e2276a65e356a9694f3d70310c7b5550502973")]
 [assembly: System.Reflection.AssemblyProductAttribute("Take5Demo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Take5Demo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,60 +7,92 @@
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\visitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\helper\\visitorquestionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\helper\\visitorquestionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\questiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\questiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\resources\\raw\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\resources\\raw\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\questionset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\signatureinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\signatureinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\selector\\questiontemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\selector\\questiontemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\viewmodel\\stepitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\viewmodel\\stepitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\resources\\raw\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\resources\\raw\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\selector\\steptemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\selector\\steptemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\helper\\visualelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\helper\\visualelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\helper\\visitorquestionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\helper\\visitorquestionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\yesnoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\yesnoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\stepvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\stepvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\booltocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\booltocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\inverseboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\control\\customsignaturepadview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\control\\customsignaturepadview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\control\\custompickeritem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\control\\custompickeritem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\control\\customentryitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\control\\customentryitem.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\featuredata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\featuredata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\questiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\questiongroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\signatureinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\signatureinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\helper\\visualelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\helper\\visualelementextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\helper\\stringhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,32 +103,8 @@
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\templatedcontentview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\selector\\steptemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\selector\\steptemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\selector\\questiontemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\selector\\questiontemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\converter\\stepvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\converter\\stepvisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\configmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|c:\\users\\tai.nguyenminh\\source\\repos\\take5demo\\take5demo\\model\\stepper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E75513A-E6F4-42B9-A6C2-AD705B9F5ECD}|Take5Demo\\Take5Demo.csproj|solutionrelative:take5demo\\model\\stepper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tai.nguyenminh\\Documents\\st-lite-poc-config-v10.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
@@ -108,8 +116,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 330,
-          "SelectedChildIndex": 12,
+          "DockedWidth": 249,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -133,10 +141,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
@@ -153,28 +157,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml",
-              "RelativeDocumentMoniker": "Take5Demo\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml",
-              "RelativeToolTip": "Take5Demo\\MainPage.xaml",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAAE0AAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-21T09:15:07.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "InverseBoolConverter.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\InverseBoolConverter.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Converter\\InverseBoolConverter.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\InverseBoolConverter.cs",
-              "RelativeToolTip": "Take5Demo\\Converter\\InverseBoolConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "QuestionTemplateSelector.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Selector\\QuestionTemplateSelector.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Selector\\QuestionTemplateSelector.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Selector\\QuestionTemplateSelector.cs",
+              "RelativeToolTip": "Take5Demo\\Selector\\QuestionTemplateSelector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:17:19.132Z"
+              "WhenOpened": "2025-05-02T09:41:16.22Z"
             },
             {
               "$type": "Document",
@@ -184,186 +175,77 @@
               "RelativeDocumentMoniker": "Take5Demo\\ViewModel\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "Take5Demo\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAF4CAAAAAAAAAAA6wHsCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIQCAAAAAAAAAAAmwJ4CAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T09:23:26.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "QuestionGroup.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionGroup.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\QuestionGroup.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionGroup.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\QuestionGroup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T02:43:48.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Question.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Question.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\Question.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Question.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\Question.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBoAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:40:08.856Z",
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Take5Demo\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml",
+              "RelativeToolTip": "Take5Demo\\MainPage.xaml",
+              "ViewState": "AgIAANQBAAAAAAAAAAAAAIQBAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-21T09:15:07.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VisitorQuestionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisitorQuestionFactory.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Helper\\VisitorQuestionFactory.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisitorQuestionFactory.cs",
-              "RelativeToolTip": "Take5Demo\\Helper\\VisitorQuestionFactory.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAASwHsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T11:07:56.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Visitor.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Visitor.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\Visitor.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Visitor.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\Visitor.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T08:29:29.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml.cs",
-              "RelativeToolTip": "Take5Demo\\MainPage.xaml.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAkwLMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:15:06.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "QuestionSet.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionSet.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\QuestionSet.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionSet.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\QuestionSet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T02:42:59.683Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "StepItem.cs",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\ViewModel\\StepItem.cs",
               "RelativeDocumentMoniker": "Take5Demo\\ViewModel\\StepItem.cs",
               "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\ViewModel\\StepItem.cs",
               "RelativeToolTip": "Take5Demo\\ViewModel\\StepItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwCIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T09:24:15.063Z"
+              "WhenOpened": "2025-04-28T10:59:01.604Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SignatureInfo.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\SignatureInfo.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\SignatureInfo.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\SignatureInfo.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\SignatureInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T12:12:55.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "VisualElementExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisualElementExtensions.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Helper\\VisualElementExtensions.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisualElementExtensions.cs",
-              "RelativeToolTip": "Take5Demo\\Helper\\VisualElementExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T09:29:49.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml",
-              "RelativeDocumentMoniker": "Take5Demo\\App.xaml",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml",
-              "RelativeToolTip": "Take5Demo\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-21T09:21:51.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "config.json",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Resources\\Raw\\config.json",
               "RelativeDocumentMoniker": "Take5Demo\\Resources\\Raw\\config.json",
               "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Resources\\Raw\\config.json",
               "RelativeToolTip": "Take5Demo\\Resources\\Raw\\config.json",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAowNgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-21T09:04:34.916Z"
+              "WhenOpened": "2025-04-25T08:33:56.176Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TemplatedContentView.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\TemplatedContentView.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\TemplatedContentView.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\TemplatedContentView.cs",
-              "RelativeToolTip": "Take5Demo\\TemplatedContentView.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MainPage.xaml.cs",
+              "RelativeToolTip": "Take5Demo\\MainPage.xaml.cs",
+              "ViewState": "AgIAAFoAAAAAXmZmZmYawHAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:38:31.948Z"
+              "WhenOpened": "2025-04-21T09:15:06.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MauiProgram.cs",
-              "RelativeToolTip": "Take5Demo\\MauiProgram.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "BoolToColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\BoolToColorConverter.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Converter\\BoolToColorConverter.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\BoolToColorConverter.cs",
+              "RelativeToolTip": "Take5Demo\\Converter\\BoolToColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T01:15:22.541Z"
+              "WhenOpened": "2025-04-29T09:57:53.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StringHelper.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\StringHelper.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Helper\\StringHelper.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\StringHelper.cs",
-              "RelativeToolTip": "Take5Demo\\Helper\\StringHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T01:24:39.275Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 6,
               "Title": "StepTemplateSelector.cs",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Selector\\StepTemplateSelector.cs",
               "RelativeDocumentMoniker": "Take5Demo\\Selector\\StepTemplateSelector.cs",
@@ -375,43 +257,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "QuestionTemplateSelector.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Selector\\QuestionTemplateSelector.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Selector\\QuestionTemplateSelector.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Selector\\QuestionTemplateSelector.cs",
-              "RelativeToolTip": "Take5Demo\\Selector\\QuestionTemplateSelector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "VisitorQuestionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisitorQuestionFactory.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Helper\\VisitorQuestionFactory.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisitorQuestionFactory.cs",
+              "RelativeToolTip": "Take5Demo\\Helper\\VisitorQuestionFactory.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAvwJYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T10:33:44.045Z"
+              "WhenOpened": "2025-04-23T11:07:56.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml.cs",
-              "RelativeToolTip": "Take5Demo\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "YesNoConverter.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\YesNoConverter.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Converter\\YesNoConverter.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\YesNoConverter.cs",
+              "RelativeToolTip": "Take5Demo\\Converter\\YesNoConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T07:21:55.373Z"
+              "WhenOpened": "2025-04-29T09:57:32.003Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\AppShell.xaml",
-              "RelativeDocumentMoniker": "Take5Demo\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\AppShell.xaml",
-              "RelativeToolTip": "Take5Demo\\AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml",
+              "RelativeDocumentMoniker": "Take5Demo\\App.xaml",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml",
+              "RelativeToolTip": "Take5Demo\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-22T07:22:04.686Z"
+              "WhenOpened": "2025-04-21T09:21:51.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 9,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\MauiProgram.cs",
+              "RelativeToolTip": "Take5Demo\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T01:15:22.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomPickerItem.xaml",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomPickerItem.xaml",
+              "RelativeDocumentMoniker": "Take5Demo\\Control\\CustomPickerItem.xaml",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomPickerItem.xaml",
+              "RelativeToolTip": "Take5Demo\\Control\\CustomPickerItem.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-29T02:59:23.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "StepVisibilityConverter.cs",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\StepVisibilityConverter.cs",
               "RelativeDocumentMoniker": "Take5Demo\\Converter\\StepVisibilityConverter.cs",
@@ -423,31 +329,151 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 13,
+              "Title": "InverseBoolConverter.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\InverseBoolConverter.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Converter\\InverseBoolConverter.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Converter\\InverseBoolConverter.cs",
+              "RelativeToolTip": "Take5Demo\\Converter\\InverseBoolConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T11:17:19.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CustomSignaturePadView.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomSignaturePadView.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Control\\CustomSignaturePadView.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomSignaturePadView.cs",
+              "RelativeToolTip": "Take5Demo\\Control\\CustomSignaturePadView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T04:21:01.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\AppShell.xaml",
+              "RelativeDocumentMoniker": "Take5Demo\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\AppShell.xaml",
+              "RelativeToolTip": "Take5Demo\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-22T07:22:04.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ConfigModel.cs",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\ConfigModel.cs",
               "RelativeDocumentMoniker": "Take5Demo\\Model\\ConfigModel.cs",
               "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\ConfigModel.cs",
               "RelativeToolTip": "Take5Demo\\Model\\ConfigModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T02:50:51.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Stepper.cs",
-              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Stepper.cs",
-              "RelativeDocumentMoniker": "Take5Demo\\Model\\Stepper.cs",
-              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\Stepper.cs",
-              "RelativeToolTip": "Take5Demo\\Model\\Stepper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "FeatureData.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\FeatureData.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Model\\FeatureData.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\FeatureData.cs",
+              "RelativeToolTip": "Take5Demo\\Model\\FeatureData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T02:43:00.244Z"
+              "WhenOpened": "2025-04-25T03:51:42.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "QuestionGroup.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionGroup.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Model\\QuestionGroup.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\QuestionGroup.cs",
+              "RelativeToolTip": "Take5Demo\\Model\\QuestionGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T08:09:42.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CustomEntryItem.xaml",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomEntryItem.xaml",
+              "RelativeDocumentMoniker": "Take5Demo\\Control\\CustomEntryItem.xaml",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Control\\CustomEntryItem.xaml",
+              "RelativeToolTip": "Take5Demo\\Control\\CustomEntryItem.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-28T11:33:30.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SignatureInfo.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\SignatureInfo.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Model\\SignatureInfo.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Model\\SignatureInfo.cs",
+              "RelativeToolTip": "Take5Demo\\Model\\SignatureInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T12:12:55.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "VisualElementExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisualElementExtensions.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Helper\\VisualElementExtensions.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\VisualElementExtensions.cs",
+              "RelativeToolTip": "Take5Demo\\Helper\\VisualElementExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:29:49.54Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "TemplatedContentView.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\TemplatedContentView.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\TemplatedContentView.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\TemplatedContentView.cs",
+              "RelativeToolTip": "Take5Demo\\TemplatedContentView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T11:38:31.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "StringHelper.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\StringHelper.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\Helper\\StringHelper.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\Helper\\StringHelper.cs",
+              "RelativeToolTip": "Take5Demo\\Helper\\StringHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T01:24:39.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml.cs",
+              "RelativeDocumentMoniker": "Take5Demo\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\tai.nguyenminh\\source\\repos\\Take5Demo\\Take5Demo\\App.xaml.cs",
+              "RelativeToolTip": "Take5Demo\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T07:21:55.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "st-lite-poc-config-v10.json",
               "DocumentMoniker": "C:\\Users\\tai.nguyenminh\\Documents\\st-lite-poc-config-v10.json",
               "RelativeDocumentMoniker": "..\\..\\..\\Documents\\st-lite-poc-config-v10.json",
@@ -460,12 +486,16 @@
           ]
         },
         {
-          "DockedWidth": 175,
+          "DockedWidth": 256,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             }
           ]
         },

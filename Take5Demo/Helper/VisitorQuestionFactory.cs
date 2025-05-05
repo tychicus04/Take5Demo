@@ -126,11 +126,6 @@ namespace Take5Demo.Helper
                 {
                     question.Answer = visitor.SignatureBase64;
                 }
-
-                if (question is QuestionViewModel viewModel)
-                {
-                    viewModel.IsAnswered = !string.IsNullOrEmpty(question.Answer);
-                }
             }
         }
         public static void SyncQuestionsToVisitorData(Visitor visitor)
@@ -153,12 +148,8 @@ namespace Take5Demo.Helper
                 }
                 else if (question.Name.Contains("Signature"))
                 {
-                    visitor.SignatureBase64 = question.Answer;
-                    visitor.HasSignature = !string.IsNullOrEmpty(question.Answer);
-                }
-                if (question is QuestionViewModel viewModel)
-                {
-                    viewModel.IsAnswered = !string.IsNullOrEmpty(question.Answer);
+                    visitor.SignatureBase64 = question.SignatureImageSource;
+                    visitor.HasSignature = question.HasSignature;
                 }
             }
         }
@@ -170,6 +161,8 @@ namespace Take5Demo.Helper
                 VisitorName = "",
                 VisitorCompany = "",
                 VisitReason = null,
+                HasSignature = false,
+                SignatureBase64 = null,
                 SignaturePadId = Guid.NewGuid().ToString(),
                 Questions = CreateVisitorQuestionsFromConfig(config)
             };

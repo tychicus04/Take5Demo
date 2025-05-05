@@ -12,24 +12,19 @@ namespace Take5Demo.ViewModel
     {
         #region Fields
         private int _currentStepNumber = 1;
-
-        private ObservableCollection<StepItem> _steps;
-        private ObservableCollection<Visitor> _visitors;
-        private ObservableCollection<QuestionGroup> _questionGroups;
+        private ObservableCollection<StepItem> _steps = new();
+        private ObservableCollection<Visitor> _visitors = new();
         private StepItem _selectedStep;
         private ConfigModel _config;
         private bool _isExpanderOpen = true;
         private string _currentStepTitle = "Step 1";
         private string _continueButtonText = "CONTINUE";
-
         private bool _canGoBack;
         private bool _canGoForward;
-
         private string _validationMessage = "Please answer all questions before proceeding.";
+        private bool _isNavigating = false;
 
-        private Dictionary<int, Dictionary<string, bool>> _stepValidationStatus = new Dictionary<int, Dictionary<string, bool>>();
-        private Dictionary<string, List<QuestionGroup>> _stepQuestionCache = new Dictionary<string, List<QuestionGroup>>();
-        private Dictionary<string, ObservableCollection<Visitor>> _stepVisitorCache = new Dictionary<string, ObservableCollection<Visitor>>();
+        private Dictionary<int, Dictionary<string, bool>> _stepValidationStatus = new ();
 
         private bool _permitAnswered;
         private bool _environmentalAnswered;
@@ -48,7 +43,6 @@ namespace Take5Demo.ViewModel
         private bool _isVisitReasonPickerAnswered;
         private bool _isSiteVisitorSignatureCompleted;
         private bool _isLeavingSiteSignatureCompleted;
-        private string _signatureStatus;
 
         public delegate Task ShowPopupDelegate(string message);
         public ShowPopupDelegate ShowPopupRequest { get; set; }
@@ -61,9 +55,6 @@ namespace Take5Demo.ViewModel
         public ICommand StepSelectedCommand { get; }
         public ICommand ToggleExpanderCommand { get; }
         public ICommand SubmitCommand { get; }
-        public ICommand ValidateSiteInfoSignatureCommand { get; }
-        public ICommand ValidateSiteVisitorSignatureCommand { get; }
-        public ICommand ValidateLeavingSiteSignatureCommand { get; }
         public ICommand AddVisitorCommand { get; }
         public ICommand RemoveVisitorCommand { get; }
 
@@ -72,18 +63,14 @@ namespace Take5Demo.ViewModel
         public MainViewModel()
         {
             GoToNextStepCommand = new Command(async () => await GoToNextStep());
-            GoToPreviousStepCommand = new Command(GoToPreviousStep);
+            GoToPreviousStepCommand = new Command(async () => await GoToPreviousStep());
             StepSelectedCommand = new Command<StepItem>(OnStepSelected);
             ToggleExpanderCommand = new Command(ToggleExpander);
             SubmitCommand = new Command(Submit);
-
-            Steps = new ObservableCollection<StepItem>();
-
             AddVisitorCommand = new Command(AddVisitorWithQuestions);
             RemoveVisitorCommand = new Command<Visitor>(RemoveVisitorWithQuestions);
-            Visitors = new ObservableCollection<Visitor>();
-
-            Task.Run(() => LoadConfiguration());
+            Task.Run(() => InitializeAsync());
+            
         }
 
         #region Properties
@@ -96,41 +83,13 @@ namespace Take5Demo.ViewModel
         public ObservableCollection<StepItem> Steps
         {
             get => _steps;
-            set
-            {
-                if (_steps != value)
-                {
-                    _steps = value;
-
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public ObservableCollection<QuestionGroup> QuestionGroups
-        {
-            get => _questionGroups;
-            set
-            {
-                if (_questionGroups != value)
-                {
-                    _questionGroups = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _steps, value);
         }
 
         public ObservableCollection<Visitor> Visitors
         {
             get => _visitors;
-            set
-            {
-                if (_visitors != value)
-                {
-                    _visitors = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _visitors, value);
         }
 
         public StepItem SelectedStep
@@ -143,7 +102,16 @@ namespace Take5Demo.ViewModel
                     _selectedStep = value;
                     if (_selectedStep != null)
                     {
-                        UpdateSelectedStep();
+                        foreach (var step in Steps)
+                        {
+                            step.IsSelected = step == SelectedStep;
+                            //step.IsCurrentStep = step == SelectedStep;
+                        }
+                        CurrentStepNumber = SelectedStep?.StepNumber ?? 1;
+                        CurrentStepTitle = SelectedStep?.SubTitle ?? $"Step {CurrentStepNumber}";
+                        CanGoBack = CurrentStepNumber > 1;
+                        CanGoForward = SelectedStep?.HasNextStep ?? false;
+                        UpdateContinueButtonText();
                     }
                     OnPropertyChanged();
                 }
@@ -167,67 +135,33 @@ namespace Take5Demo.ViewModel
         public bool CanGoBack
         {
             get => _canGoBack;
-            set
-            {
-                if (_canGoBack != value)
-                {
-                    _canGoBack = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _canGoBack, value);
         }
 
         public bool CanGoForward
         {
             get => _canGoForward;
-            set
-            {
-                if (_canGoForward != value)
-                {
-                    _canGoForward = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _canGoForward, value);
         }
 
         public bool IsExpanderOpen
         {
             get => _isExpanderOpen;
-            set
-            {
-                if (_isExpanderOpen != value)
-                {
-                    _isExpanderOpen = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _isExpanderOpen, value);
         }
 
         public string CurrentStepTitle
         {
             get => _currentStepTitle;
-            set
-            {
-                if (_currentStepTitle != value)
-                {
-                    _currentStepTitle = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _currentStepTitle, value);
         }
 
         public bool PermitAnswered
         {
             get => _permitAnswered;
-            set
-            {
-                if (_permitAnswered != value)
-                {
-                    _permitAnswered = value;
-                    UpdateStepValidation(1, "Permit", value);
-                    OnPropertyChanged();
-        
-                }
+            set 
+            { 
+                if(SetProperty(ref _permitAnswered, value)) UpdateStepValidation(1, "Permit", value);
             }
         }
 
@@ -236,13 +170,7 @@ namespace Take5Demo.ViewModel
             get => _environmentalAnswered;
             set
             {
-                if (_environmentalAnswered != value)
-                {
-                    _environmentalAnswered = value;
-                    UpdateStepValidation(1, "Environmental", value);
-                    OnPropertyChanged();
-    
-                }
+                if (SetProperty(ref _environmentalAnswered, value)) UpdateStepValidation(1, "Environmental", value);
             }
         }
 
@@ -251,13 +179,7 @@ namespace Take5Demo.ViewModel
             get => _siteRiskAnswered;
             set
             {
-                if (_siteRiskAnswered != value)
-                {
-                    _siteRiskAnswered = value;
-                    UpdateStepValidation(1, "SiteRisk", value);
-                    OnPropertyChanged();
-             
-                }
+                if (SetProperty(ref _siteRiskAnswered, value)) UpdateStepValidation(1, "SiteRisk", value);
             }
         }
 
@@ -266,13 +188,7 @@ namespace Take5Demo.ViewModel
             get => _isSiteRiskPickerAnswered;
             set
             {
-                if (_isSiteRiskPickerAnswered != value)
-                {
-                    _isSiteRiskPickerAnswered = value;
-                    UpdateStepValidation(1, "SiteRiskPicker", value);
-                    OnPropertyChanged();
-               
-                }
+                if (SetProperty(ref _isSiteRiskPickerAnswered, value)) UpdateStepValidation(1, "SiteRiskPicker", value);
             }
         }
 
@@ -281,13 +197,7 @@ namespace Take5Demo.ViewModel
             get => _SOPTaskAnswered;
             set
             {
-                if (_SOPTaskAnswered != value)
-                {
-                    _SOPTaskAnswered = value;
-                    UpdateStepValidation(1, "SOPTask", value);
-                    OnPropertyChanged();
-
-                }
+                if (SetProperty(ref _SOPTaskAnswered, value)) UpdateStepValidation(1, "SOPTask", value);
             }
         }
 
@@ -296,13 +206,7 @@ namespace Take5Demo.ViewModel
             get => _isEvacuationPointAnswered;
             set
             {
-                if (_isEvacuationPointAnswered != value)
-                {
-                    _isEvacuationPointAnswered = value;
-                    UpdateStepValidation(2, "EvacuationPoint", value);
-                    OnPropertyChanged();
-            
-                }
+                if (SetProperty(ref _isEvacuationPointAnswered, value)) UpdateStepValidation(2, "EvacuationPoint", value);
             }
         }
 
@@ -311,13 +215,7 @@ namespace Take5Demo.ViewModel
             get => _isLocationPickerAnswered;
             set
             {
-                if (_isLocationPickerAnswered != value)
-                {
-                    _isLocationPickerAnswered = value;
-                    UpdateStepValidation(2, "LocationPicker", value);
-                    OnPropertyChanged();
-            
-                }
+                if(SetProperty(ref _isLocationPickerAnswered, value)) UpdateStepValidation(2, "LocationPicker", value);
             }
         }
 
@@ -326,13 +224,7 @@ namespace Take5Demo.ViewModel
             get => _isFacilityNameAnswered;
             set
             {
-                if (_isFacilityNameAnswered != value)
-                {
-                    _isFacilityNameAnswered = value;
-                    UpdateStepValidation(2, "FacilityName", value);
-                    OnPropertyChanged();
-        
-                }
+                if (SetProperty(ref _isFacilityNameAnswered, value)) UpdateStepValidation(2, "FacilityName", value);
             }
         }
 
@@ -341,13 +233,7 @@ namespace Take5Demo.ViewModel
             get => _isSiteInfoSignatureCompleted;
             set
             {
-                if (_isSiteInfoSignatureCompleted != value)
-                {
-                    _isSiteInfoSignatureCompleted = value;
-                    UpdateStepValidation(2, "SiteInfoSignature", value);
-                    OnPropertyChanged();
-             
-                }
+                if (SetProperty(ref _isSiteInfoSignatureCompleted, value)) UpdateStepValidation(2, "SiteInfoSignature", value);
             }
         }
 
@@ -356,13 +242,7 @@ namespace Take5Demo.ViewModel
             get => _isFieldManagerPickerAnswered;
             set
             {
-                if (_isFieldManagerPickerAnswered != value)
-                {
-                    _isFieldManagerPickerAnswered = value;
-                    UpdateStepValidation(3, "FieldManagerPicker", value);
-                    OnPropertyChanged();
-          
-                }
+                if (SetProperty(ref _isFieldManagerPickerAnswered, value)) UpdateStepValidation(3, "FieldManagerPicker", value);
             }
         }
 
@@ -371,13 +251,7 @@ namespace Take5Demo.ViewModel
             get => _isWorkTypePickerAnswered;
             set
             {
-                if (_isWorkTypePickerAnswered != value)
-                {
-                    _isWorkTypePickerAnswered = value;
-                    UpdateStepValidation(3, "WorkTypePicker", value);
-                    OnPropertyChanged();
-          
-                }
+                if (SetProperty(ref _isWorkTypePickerAnswered, value)) UpdateStepValidation(3, "WorkTypePicker", value);
             }
         }
 
@@ -386,13 +260,7 @@ namespace Take5Demo.ViewModel
             get => _isVisitorNameAnswered;
             set
             {
-                if (_isVisitorNameAnswered != value)
-                {
-                    _isVisitorNameAnswered = value;
-                    UpdateStepValidation(4, "VisitorName", value);
-                    OnPropertyChanged();
-
-                }
+                if (SetProperty(ref _isVisitorNameAnswered, value)) UpdateStepValidation(4, "VisitorName", value);
             }
         }
 
@@ -401,13 +269,7 @@ namespace Take5Demo.ViewModel
             get => _isVisitorCompanyNameAnswered;
             set
             {
-                if (_isVisitorCompanyNameAnswered != value)
-                {
-                    _isVisitorCompanyNameAnswered = value;
-                    UpdateStepValidation(4, "VisitorCompanyName", value);
-                    OnPropertyChanged();
-              
-                }
+                if (SetProperty(ref _isVisitorCompanyNameAnswered, value)) UpdateStepValidation(4, "VisitorCompanyName", value);
             }
         }
 
@@ -416,12 +278,7 @@ namespace Take5Demo.ViewModel
             get => _isVisitReasonPickerAnswered;
             set
             {
-                if (_isVisitReasonPickerAnswered != value)
-                {
-                    _isVisitReasonPickerAnswered = value;
-                    UpdateStepValidation(4, "VisitReasonPicker", value);
-                    OnPropertyChanged();
-                }
+                if (SetProperty(ref _isVisitReasonPickerAnswered, value)) UpdateStepValidation(4, "VisitReasonPicker", value);
             }
         }
 
@@ -430,12 +287,7 @@ namespace Take5Demo.ViewModel
             get => _isSiteVisitorSignatureCompleted;
             set
             {
-                if (_isSiteVisitorSignatureCompleted != value)
-                {
-                    _isSiteVisitorSignatureCompleted = value;
-                    UpdateStepValidation(4, "SiteVisitorSignature", value);
-                    OnPropertyChanged();
-                }
+                if (SetProperty(ref _isSiteVisitorSignatureCompleted, value)) UpdateStepValidation(4, "SiteVisitorSignature", value);
             }
         }
 
@@ -444,44 +296,18 @@ namespace Take5Demo.ViewModel
             get => _isLeavingSiteSignatureCompleted;
             set
             {
-                if (_isLeavingSiteSignatureCompleted != value)
-                {
-                    _isLeavingSiteSignatureCompleted = value;
-                    UpdateStepValidation(5, "LeavingSiteSignature", value);
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public string SignatureStatus
-        {
-            get => _signatureStatus;
-            set
-            {
-                _signatureStatus = value;
-                OnPropertyChanged(nameof(SignatureStatus));
+                if (SetProperty(ref _isLeavingSiteSignatureCompleted, value)) UpdateStepValidation(5, "LeavingSiteSignature", value);
             }
         }
         public string ContinueButtonText
         {
             get => _continueButtonText;
-            set
-            {
-                if (_continueButtonText != value)
-                {
-                    _continueButtonText = value;
-                    OnPropertyChanged();
-                }
-            }
+            set => SetProperty(ref _continueButtonText, value);
         }
         #endregion
 
         #region Methods
-        public bool IsStepVisible(int stepNumber)
-        {
-            return stepNumber == CurrentStepNumber;
-        }
-        public int TotalSteps => Steps?.Count ?? 0;
-        private async void LoadConfiguration()
+        private async void InitializeAsync()
         {
             try
             {
@@ -489,17 +315,12 @@ namespace Take5Demo.ViewModel
                 using var reader = new StreamReader(stream);
                 var json = await reader.ReadToEndAsync();
 
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
-
-                _config = JsonSerializer.Deserialize<ConfigModel>(json, options);
-
-                if (_config != null)
-                {
-                    InitializeSteps();
-                }
+                _config = JsonSerializer.Deserialize<ConfigModel>(
+                    json, 
+                    new JsonSerializerOptions { 
+                        PropertyNameCaseInsensitive = true 
+                    });
+                InitializeSteps();
             }
             catch (Exception ex)
             {
@@ -507,37 +328,40 @@ namespace Take5Demo.ViewModel
                 LoadDefaultSteps();
             }
         }
-
+        public bool IsStepVisible(int stepNumber)
+        {
+            return stepNumber == CurrentStepNumber;
+        }
+        public int TotalSteps => Steps?.Count ?? 0;
         private void InitializeSteps()
         {
             Steps.Clear();
             _stepValidationStatus.Clear();
 
-            if (_config?.JobTab?.Steppers != null && _config.JobTab.Steppers.Count > 0)
+            if (_config?.JobTab?.Steppers?.FirstOrDefault()?.SubSteppers is { } subSteppers)
             {
-                var subSteppers = _config.JobTab.Steppers[0].SubSteppers;
+                var dataFeatures = _config.DataLists;
 
-                if (subSteppers != null)
+                for (int i = 0; i < subSteppers.Count; i++)
                 {
-                    for (int i = 0; i < subSteppers.Count; i++)
+                    var subStepper = subSteppers[i];
+                    int stepNumber = i + 1;
+                    var dataFeature = dataFeatures.FirstOrDefault(df => df.FeatureKey == subStepper.FeatureKey);
+
+                    var step = new StepItem
                     {
-                        var subStepper = subSteppers[i];
-                        int stepNumber = i + 1;
-                        Steps.Add(new StepItem
-                        {
-                            StepId = subStepper.FeatureKey,
-                            StepNumber = i + 1,
-                            Title = subStepper.Title,
-                            IsSelected = i == 0,
-                            IsCurrentStep = i == 0,
-                            HasNextStep = i < subSteppers.Count - 1,
-                            SubTitle = subStepper.SubTitle,
-                            QuestionGroups = new ObservableCollection<QuestionGroup>()
+                        StepId = subStepper.FeatureKey,
+                        StepNumber = stepNumber,
+                        Title = subStepper.Title,
+                        IsSelected = i == 0,
+                        IsCurrentStep = i == 0,
+                        HasNextStep = i < subSteppers.Count - 1,
+                        SubTitle = subStepper.SubTitle,
+                        QuestionGroups = CreateQuestionGroups(dataFeature?.QuestionSet?.QuestionGroups)
+                    };
 
-                        });
-
-                        InitializeStepValidation(stepNumber, subStepper.FeatureKey);
-                    }
+                    Steps.Add(step);
+                    InitializeStepValidation(stepNumber, subStepper.FeatureKey);
                 }
             }
 
@@ -545,14 +369,36 @@ namespace Take5Demo.ViewModel
             {
                 LoadDefaultSteps();
             }
-
-            if (Steps.Count > 0)
+            else
             {
                 SelectedStep = Steps.FirstOrDefault(s => s.IsSelected);
-                CurrentStepNumber = SelectedStep?.StepNumber ?? 1;
                 OnPropertyChanged(nameof(TotalSteps));
-                LoadQuestionsForCurrentStep();
             }
+        }
+
+        private ObservableCollection<QuestionGroup> CreateQuestionGroups(IEnumerable<QuestionGroup> questionGroups)
+        {
+            if (questionGroups == null) return new ObservableCollection<QuestionGroup>();
+
+            var result = new ObservableCollection<QuestionGroup>();
+            foreach (var group in questionGroups)
+            {
+                var newGroup = new QuestionGroup
+                {
+                    Name = group.Name,
+                    Description = group.Description,
+                    Questions = group.Questions?.Select(q => new Question
+                    {
+                        Name = q.Name,
+                        Description = q.Description,
+                        ResponseType = q.ResponseType,
+                        IsMandatory = q.IsMandatory,
+                        Value = q.Value
+                    }).ToList() ?? new List<Question>()
+                };
+                result.Add(newGroup);
+            }
+            return result;
         }
 
         private void FindAndUpdateVisitorForQuestion(Question question)
@@ -613,79 +459,243 @@ namespace Take5Demo.ViewModel
                 !string.IsNullOrWhiteSpace(visitor.VisitorName) &&
                 !string.IsNullOrWhiteSpace(visitor.VisitorCompany) &&
                 !string.IsNullOrWhiteSpace(visitor.VisitReason) &&
-                visitor.HasSignature &&
-                visitor.AreRequiredQuestionsAnswered);
+                visitor.HasSignature);
         }
-        private void LoadQuestionsForCurrentStep()
+        private void LoadDefaultSteps()
         {
+            Steps.Clear();
+            _stepValidationStatus.Clear();
+
+            Steps.Add(new StepItem
+            {
+                StepId = "Step1",
+                StepNumber = 1,
+                Title = "Step 1",
+                SubTitle = "Precursors",
+                IsSelected = true,
+                HasNextStep = true
+            });
+
+            _stepValidationStatus[1] = new Dictionary<string, bool>
+            {
+                { "Permit", false },
+            };
+
+            SelectedStep = Steps[0];
+            CurrentStepNumber = 1;
+            OnPropertyChanged(nameof(TotalSteps));
+        }
+
+        private void UpdateStepValidation(int stepNumber, string field, bool isValid)
+        {
+            if (!_stepValidationStatus.ContainsKey(stepNumber))
+            {
+                _stepValidationStatus[stepNumber] = new Dictionary<string, bool>();
+            }
+
+            _stepValidationStatus[stepNumber][field] = isValid;
+        }
+        private void ToggleExpander()
+        {
+            IsExpanderOpen = !IsExpanderOpen;
+        }
+
+        private async void OnStepSelected(StepItem step)
+        {
+            if (step != null && step != SelectedStep)
+            {
+                await NavigateToStep(step.StepNumber);
+            }
+        }
+
+        private bool IsPreviousStepsValid(int targetStepNumber)
+        {
+            for (int stepNum = 1; stepNum < targetStepNumber; stepNum++)
+            {
+                if (!IsStepValid(stepNum))
+                    return false;
+            }
+            return true;
+        }
+
+        private bool IsStepValid(int stepNumber)
+        {
+            if (stepNumber <= 0 || stepNumber > Steps.Count ||
+                !_stepValidationStatus.TryGetValue(stepNumber, out var validationFields))
+                return false;
+
+            if (validationFields.Count == 0)
+                return true;
+
+            var step = Steps[stepNumber - 1];
+
+            if (step.StepId == "site-crew")
+                return AreVisitorsValid();
+
+            return step.QuestionGroups?.SelectMany(group => group.Questions)
+                                     .Where(q => q.IsMandatory)
+                                     .All(q => !string.IsNullOrWhiteSpace(q.Answer)) ?? false;
+        }
+
+        private async Task NavigateToStep(int stepNumber)
+        {
+            _isNavigating = true;
             try
             {
-                if (SelectedStep == null) return;
-
-                string stepId = SelectedStep.StepId;
-
-                //if (_stepQuestionCache.TryGetValue(stepId, out var cachedQuestions) && cachedQuestions != null)
-                //{
-                //    QuestionGroups = new ObservableCollection<QuestionGroup>(cachedQuestions);
-                //    UpdateStepQuestionGroups(stepId, cachedQuestions);
-
-                //    if (stepId == "site-crew" && _stepVisitorCache.TryGetValue(stepId, out var cachedVisitors))
-                //    {
-                //        Visitors = cachedVisitors;
-                //    }
-
-                //    UpdateStepStates();
-                //    UpdateContinueButtonText();
-                //    return;
-                //}
-
-                var takeFeature = _config?.DataLists?.FirstOrDefault(d => d.FeatureKey == stepId);
-                var questionGroups = takeFeature?.QuestionSet?.QuestionGroups ?? new List<QuestionGroup>();
-
-                if (stepId == "site-crew")
+                if (stepNumber > CurrentStepNumber && !IsPreviousStepsValid(stepNumber))
                 {
-                    Visitors ??= new ObservableCollection<Visitor>();
-                    if (Visitors.Count == 0) AddVisitorWithQuestions();
-                    _stepVisitorCache[stepId] = Visitors;
+                    if (ShowPopupRequest != null)
+                    {
+                        await ShowPopupRequest(_validationMessage);
+                    }
+                    return;
                 }
 
-                QuestionGroups = new ObservableCollection<QuestionGroup>(questionGroups);
-                _stepQuestionCache[stepId] = new List<QuestionGroup>(questionGroups);
+                if (Steps[stepNumber - 1].StepId == "site-crew" && (Visitors?.Count ?? 0) == 0)
+                {
+                    Visitors = new ObservableCollection<Visitor>();
+                    AddVisitorWithQuestions();
+                }
 
-                UpdateStepQuestionGroups(stepId, questionGroups);
-                ValidateVisitors();
-                UpdateContinueButtonText();
+                MainThread.BeginInvokeOnMainThread(() =>
+                {
+                    var step = Steps.FirstOrDefault(s => s.StepNumber == stepNumber);
+                    if (step != null)
+                    {
+                        SelectedStep = step;
+                    }
+                });
+            }
+            finally
+            {
+                _isNavigating = false;
+            }
+
+
+
+        }
+
+        private async Task GoToNextStep()
+        {
+            if (SelectedStep?.HasNextStep == true)
+            {
+                await NavigateToStep(CurrentStepNumber + 1);
+            }
+            else
+            {
+                Submit();
+            }
+        }
+        private async Task GoToPreviousStep() =>
+            await NavigateToStep(CurrentStepNumber - 1);
+
+        private async void Submit()
+        {
+            if (!IsStepValid(CurrentStepNumber))
+            {
+                if (ShowPopupRequest != null)
+                {
+                    await ShowPopupRequest(_validationMessage);
+                }
+                return;
+            }
+            try
+            {
+                
+                await Application.Current.MainPage.DisplayAlert("Success", "Your form has been submitted successfully!", "OK");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading questions: {ex.Message}");
+                Console.WriteLine($"Error deleting file: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Error", "An error occurred while submitting the form.", "OK");
             }
         }
 
-        private void UpdateStepQuestionGroups(string stepId, IEnumerable<QuestionGroup> questionGroups)
+        public void HandleRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e, Question question)
         {
-            foreach (var step in Steps)
+            if (_isNavigating) return;
+            if (sender is RadioButton radioButton)
             {
-                if (step.StepId == stepId)
-                {
-                    step.QuestionGroups = new ObservableCollection<QuestionGroup>(questionGroups);
-                }
+                HandleQuestionAnswered(question, radioButton.Content?.ToString());
             }
+
+            FindAndUpdateVisitorForQuestion(question);
         }
 
-        private void UpdateStepStates()
+        public void HandlePickerSelectedIndexChanged(object sender, EventArgs e, Question question)
         {
-            foreach (var step in Steps)
+            if (sender is Picker picker && picker.SelectedIndex >= 0)
             {
-                step.IsCurrentStep = step.StepNumber == CurrentStepNumber;
+                HandleQuestionAnswered(question, picker.SelectedItem?.ToString());
             }
+
+            FindAndUpdateVisitorForQuestion(question);
         }
 
+        public void HandleEntryTextChanged(object sender, TextChangedEventArgs e, Question question)
+        {
+            if (sender is Entry entry)
+            {
+                HandleQuestionAnswered(question, entry.Text);
+            }
+
+            FindAndUpdateVisitorForQuestion(question);
+        }
+
+        public void HandleSignatureCompleted(object sender, EventArgs e, Question question, string base64String)
+        {
+            if (string.IsNullOrEmpty(base64String))
+            {
+                return;
+            }
+            HandleQuestionAnswered(question, base64String);
+            question.SignatureImageSource = base64String;
+            question.HasSignature = true;
+            FindAndUpdateVisitorForQuestion(question);
+        }
+        public void HandleSignatureCleared(object sender, EventArgs e, Question question)
+        {
+            HandleQuestionAnswered(question, string.Empty);
+            question.SignatureImageSource = null;
+            question.HasSignature = false;
+        }
         public void HandleQuestionAnswered(Question question, string answer)
         {
             if (question == null) return;
 
             question.Answer = answer;
+
+            //foreach (var step in Steps)
+            //{
+            //    foreach (var group in step.QuestionGroups)
+            //    {
+            //        foreach (var q in group.Questions)
+            //        {
+            //            if (q.Name == question.Name)
+            //            {
+            //                q.Answer = answer;
+            //                if (q.ResponseType == "Signature")
+            //                {
+            //                    q.HasSignature = question.HasSignature;
+            //                    q.SignatureImageSource = question.SignatureImageSource;
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            SelectedStep.QuestionGroups.SelectMany(group => group.Questions)
+                .Where(q => q.Name == question.Name)
+                .ToList()
+                .ForEach(q =>
+                {
+                    q.Answer = answer;
+                    if (q.ResponseType == "Signature")
+                    {
+                        q.HasSignature = question.HasSignature;
+                        q.SignatureImageSource = question.SignatureImageSource;
+                    }
+                });
+
             bool isAnswered = !string.IsNullOrEmpty(answer);
 
             switch (question.Name)
@@ -781,250 +791,17 @@ namespace Take5Demo.ViewModel
             }
         }
 
-        private void LoadDefaultSteps()
-        {
-            Steps.Clear();
-            _stepValidationStatus.Clear();
-
-            Steps.Add(new StepItem
-            {
-                StepId = "Step1",
-                StepNumber = 1,
-                Title = "Step 1",
-                SubTitle = "Precursors",
-                IsSelected = true,
-                HasNextStep = true
-            });
-
-            _stepValidationStatus[1] = new Dictionary<string, bool>
-            {
-                { "Permit", false },
-            };
-
-            SelectedStep = Steps[0];
-            CurrentStepNumber = 1;
-            OnPropertyChanged(nameof(TotalSteps));
-        }
-
-        private void UpdateSelectedStep()
-        {
-            foreach (var step in Steps)
-            {
-                step.IsSelected = step == SelectedStep;
-                step.IsCurrentStep = step == SelectedStep;
-            }
-
-            CurrentStepNumber = SelectedStep?.StepNumber ?? 1;
-            CurrentStepTitle = SelectedStep?.SubTitle ?? $"Step {CurrentStepNumber}";
-            CanGoBack = CurrentStepNumber > 1;
-            CanGoForward = SelectedStep?.HasNextStep ?? false;
-
-            UpdateContinueButtonText();
-        }
-
-        private void UpdateStepValidation(int stepNumber, string field, bool isValid)
-        {
-            if (!_stepValidationStatus.ContainsKey(stepNumber))
-            {
-                _stepValidationStatus[stepNumber] = new Dictionary<string, bool>();
-            }
-
-            _stepValidationStatus[stepNumber][field] = isValid;
-        }
-
-        private async void OnStepSelected(StepItem step)
-        {
-            if (step != null && step != SelectedStep)
-            {
-                if (IsCurrentStepValid() || step.StepNumber < SelectedStep.StepNumber)
-                {
-                    if (SelectedStep != null)
-                    {
-                        SaveCurrentStepData();
-                    }
-
-                    SelectedStep = step;
-                    LoadQuestionsForCurrentStep();
-                }
-                else
-                {
-                    if (ShowPopupRequest != null)
-                    {
-                        await ShowPopupRequest(_validationMessage);
-                    }
-                }
-            }
-
-            await Task.Delay(200).ContinueWith(_ =>
-            {
-                IsExpanderOpen = false;
-                OnPropertyChanged(nameof(IsExpanderOpen));
-            }, TaskScheduler.FromCurrentSynchronizationContext());
-        }
-
-        private void SaveCurrentStepData()
-        {
-            try
-            {
-                if (SelectedStep == null) return;
-
-                string stepId = SelectedStep.StepId;
-
-                if (QuestionGroups != null && QuestionGroups.Count > 0)
-                {
-                    _stepQuestionCache[stepId] = new List<QuestionGroup>(QuestionGroups);
-                }
-
-                if (stepId == "site-crew" && Visitors != null)
-                {
-                    _stepVisitorCache[stepId] = Visitors;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error saving step data: {ex.Message}");
-            }
-        }
-
-        private void ToggleExpander()
-        {
-            IsExpanderOpen = !IsExpanderOpen;
-        }
-
-        private async Task GoToNextStep()
-        {
-            if (SelectedStep != null)
-            {
-                if (!IsCurrentStepValid())
-                {
-                    if (ShowPopupRequest != null)
-                    {
-                        await ShowPopupRequest(_validationMessage);
-                    }
-                    return;
-                }
-
-                SaveCurrentStepData();
-
-                if (CurrentStepNumber == Steps.Count)
-                {
-                    Submit();
-                    return;
-                }
-
-                int nextIndex = Steps.IndexOf(SelectedStep) + 1;
-                if (nextIndex < Steps.Count)
-                {
-                    SelectedStep = Steps[nextIndex];
-                    LoadQuestionsForCurrentStep();
-                }
-            }
-        }
-
-        private void GoToPreviousStep()
-        {
-            if (SelectedStep != null && SelectedStep.StepNumber > 1)
-            {
-                SaveCurrentStepData();
-
-                int previousIndex = Steps.IndexOf(SelectedStep) - 1;
-                if (previousIndex >= 0)
-                {
-                    SelectedStep = Steps[previousIndex];
-                    LoadQuestionsForCurrentStep();
-                }
-            }
-        }
-
-        private bool IsCurrentStepValid()
-        {
-            if (CurrentStepNumber <= 0 ||
-                !_stepValidationStatus.TryGetValue(CurrentStepNumber, out var validationFields))
-                return false;
-
-            if (validationFields.Count == 0)
-                return true;
-
-            if (CurrentStepNumber == 4)
-                return AreVisitorsValid();
-
-            return QuestionGroups?.SelectMany(group => group.Questions)
-                                 .Where(q => q.IsMandatory)
-                                 .All(q => !string.IsNullOrWhiteSpace(q.Answer)) ?? false;
-        }
-
-        private async void Submit()
-        {
-            if (!IsCurrentStepValid())
-            {
-                if (ShowPopupRequest != null)
-                {
-                    ShowPopupRequest(_validationMessage);
-                }
-                return;
-            }
-            try
-            {
-                Application.Current.MainPage.DisplayAlert("Success", "Your form has been submitted successfully!", "OK");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error deleting file: {ex.Message}");
-                Application.Current.MainPage.DisplayAlert("Error", "An error occurred while submitting the form.", "OK");
-            }
-        }
-
-        public void HandleRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e, Question question)
-        {
-            if (e.Value && sender is RadioButton radioButton)
-            {
-                HandleQuestionAnswered(question, radioButton.Content?.ToString());
-            }
-
-            FindAndUpdateVisitorForQuestion(question);
-        }
-
-        public void HandlePickerSelectedIndexChanged(object sender, EventArgs e, Question question)
-        {
-            if (sender is Picker picker && picker.SelectedIndex >= 0)
-            {
-                HandleQuestionAnswered(question, picker.SelectedItem?.ToString());
-            }
-
-            FindAndUpdateVisitorForQuestion(question);
-        }
-
-        public void HandleEntryTextChanged(object sender, TextChangedEventArgs e, Question question)
-        {
-            if (sender is Entry entry)
-            {
-                HandleQuestionAnswered(question, entry.Text);
-            }
-
-            FindAndUpdateVisitorForQuestion(question);
-        }
-
-        public void HandleSignatureCompleted(object sender, EventArgs e, Question question, string base64String)
-        {
-            if (string.IsNullOrEmpty(base64String))
-            {
-                return;
-            }
-            HandleQuestionAnswered(question, base64String);
-            SignatureStatus = "Signature accepted";
-            FindAndUpdateVisitorForQuestion(question);
-        }
-
-        public void HandleSignatureCleared(object sender, EventArgs e, Question question)
-        {
-            HandleQuestionAnswered(question, string.Empty);
-   
-            SignatureStatus = "Signature cleared";
-        }
-
         private void UpdateContinueButtonText()
         {
             ContinueButtonText = (CurrentStepNumber == Steps?.Count) ? "SUBMIT" : "CONTINUE";
+        }
+
+        private bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
         #endregion
     }

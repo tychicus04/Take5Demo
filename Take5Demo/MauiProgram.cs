@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using FFImageLoading.Maui;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
 
 namespace Take5Demo
 {
@@ -9,6 +11,12 @@ namespace Take5Demo
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+#if ANDROID
+builder.ConfigureMauiHandlers(handlers =>
+{
+    handlers.AddHandler(typeof(DrawingView), typeof(CommunityToolkit.Maui.Core.Handlers.DrawingViewHandler));
+});
+#endif
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
@@ -18,6 +26,7 @@ namespace Take5Demo
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
 
 #if DEBUG
             builder.Logging.AddDebug();
